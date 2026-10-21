@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.env
+
+# keep the extraction cache: with it, `build_demo_graph.py load` rebuilds the graph without an LLM
+data/cache/*
+!data/cache/extractions.jsonl
+data/uploads/
+
+frontend/node_modules/
+frontend/dist/
+
+.DS_Store

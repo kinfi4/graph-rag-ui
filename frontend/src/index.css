@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-display: "Unbounded", "Inter", system-ui, sans-serif;
+
+  --color-ink-950: #07070d;
+  --color-ink-900: #0e0f1a;
+  --color-ink-850: #141526;
+  --color-ink-800: #1b1c31;
+  --color-ink-700: #2a2b45;
+  --color-ink-500: #6b6d8f;
+  --color-ink-300: #b4b6d4;
+  --color-ink-100: #eceefe;
+
+  --color-brand-violet: #a78bfa;
+  --color-brand-cyan: #22d3ee;
+  --color-brand-lime: #d9f99d;
+  --color-brand-pink: #f472b6;
+
+  --color-status-good: #0ca30c;
+  --color-status-warning: #fab219;
+  --color-status-critical: #d03b3b;
+
+  --animate-float: float 8s ease-in-out infinite;
+  --animate-shimmer: shimmer 2.2s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(0, -18px, 0) scale(1.05); }
+}
+
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-ink-950);
+  color: var(--color-ink-100);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.text-gradient {
+  background: linear-gradient(92deg, #c4b5fd 0%, #67e8f9 45%, #d9f99d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass {
+  background: rgba(20, 21, 38, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(14px);
+}
+
+.shimmer {
+  background: linear-gradient(90deg, rgba(167, 139, 250, 0.08) 0%,
+      rgba(34, 211, 238, 0.28) 50%, rgba(167, 139, 250, 0.08) 100%);
+  background-size: 200% 100%;
+  animation: var(--animate-shimmer);
+}
+
+.scroll-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+.scroll-thin::-webkit-scrollbar-thumb { background: #2a2b45; border-radius: 99px; }
+.scroll-thin::-webkit-scrollbar-track { background: transparent; }
+
+input[type="range"].step-slider {
+  accent-color: #a78bfa;
+}
